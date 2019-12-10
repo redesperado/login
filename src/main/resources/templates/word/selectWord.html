@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>单词意思查询</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+    </script>
+</head>
+<body>
+    <input type="text" id="input" name="en"/>
+    <button id="submit" >查询</button>
+<!--    <p th:text = "${properties}"></p>-->
+<!--    <p th:text = "${cn}"></p>-->
+
+    <p id="properties"></p>
+    <p id="cn"></p>
+<script>
+    $('#submit').on('click',function () {
+        var inputValue = $('#input').val();
+        var param = {
+            "en": inputValue
+        };
+        $.post('/selectWord2',param,function (result) {
+            if(result!=null || result!=''){
+                $('#properties').text(result.properties);
+                $('#cn').text(result.cn);
+            }
+        });
+    });
+
+</script>
+</body>
+</html>

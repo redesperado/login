@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>记录新单词</title>
+</head>
+<body>
+<form role="form" action = "/addWord" method="post" >
+    单词：<input type="text" name = "en">
+    属性：<input type="text" name = "properties">
+    翻译：<input type="text" name = "cn">
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>

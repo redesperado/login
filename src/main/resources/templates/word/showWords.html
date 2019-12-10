@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>单词展示</title>
+</head>
+<body>
+    <div th:each = "word : ${getWords}">
+        <p th:text="${word.id}">1</p>
+        <p th:text="${word.en}">1</p>
+        <p th:text="${word.properties}">1</p>
+        <p th:text="${word.cn}">1</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+spring:
+  #数据库配置
+  datasource:
+    name: test
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false #url
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+  #热部署配置
+  thymeleaf:
+    cache: true
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+  freemarker:
+    cache: false
+
+
+#Mybatis配置
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.test.login.bean
